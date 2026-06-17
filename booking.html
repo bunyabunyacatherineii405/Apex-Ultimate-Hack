@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo - Unified Checkout Terminal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+<header class="navbar">
+    <div class="logo">
+        <h2>TravelGo</h2>
+    </div>
+    <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="login.html" class="login-btn">Login</a>
+</header>
+
+<main class="booking-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px;">
+    
+    <section class="booking-summary" style="flex: 1.2; min-width: 320px; background: var(--card-bg, #1e293b); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); height: fit-content;">
+        </section>
+
+    <section class="payment-form" style="flex: 1; min-width: 320px; background: var(--card-bg, #1e293b); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+        <h2>Secure Payment Gateway</h2>
+        <p style="color: var(--muted, #94a3b8); margin-bottom: 20px; font-size: 14px;">Confirm your primary passenger credentials below to finalize the transaction and authorize multi-ticket voucher generation.</p>
+        
+        <form action="#" method="POST">
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Primary Passenger Full Name</label>
+                <input type="text" id="cardName" placeholder="e.g. Rahul Sharma" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Notification Contact Email</label>
+                <input type="email" placeholder="e.g. traveler@travelgo.com" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Credit / Debit Card Number</label>
+                <input type="text" maxlength="19" placeholder="4532 •••• •••• 8824" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: monospace; letter-spacing: 2px;">
+            </div>
+
+            <div class="form-group-row" style="display: flex; gap: 15px; margin-bottom: 25px;">
+                <div class="form-group" style="flex: 1;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Expiry Date</label>
+                    <input type="text" maxlength="5" placeholder="MM/YY" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; text-align: center;">
+                </div>
+                <div class="form-group" style="flex: 1;">
+                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Security CVV</label>
+                    <input type="password" maxlength="3" placeholder="•••" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; text-align: center;">
+                </div>
+            </div>
+
+            <button type="submit" class="pay-btn" style="width: 100%; background: #3b82f6; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+                Authorize Payment & Clear Itinerary
+            </button>
+        </form>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <div>
+            <h3>TravelGo</h3>
+            <p>Your premium, trusted travel partner for unforgettable journeys.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="flights.html">Flights</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Info</h3>
+            <p>support@travelgo.com</p>
+            <p>+91 98765 43210</p>
+        </div>
+    </div>
+    <p class="copyright"></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

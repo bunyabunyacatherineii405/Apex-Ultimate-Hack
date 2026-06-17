@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo - Holiday Packages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <h2>TravelGo</h2>
+    </div>
+    <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="login.html" class="login-btn">Login</a>
+</header>
+
+<section class="packages-hero">
+    <div class="hero-content">
+        <h1>All-Inclusive Holiday Packages</h1>
+        <p>Enjoy handpicked itineraries combining premium stays, guided sightseeing, and transit.</p>
+    </div>
+</section>
+
+<section class="package-search">
+    <form class="package-search-form" action="#" method="GET">
+        <div class="form-group">
+            <label>Search Packages</label>
+            <input type="text" placeholder="Search by destination, theme, or keyword (e.g. Heritage, Beach, Goa)..." required>
+        </div>
+        <button type="submit" class="search-btn">Search Packages</button>
+    </form>
+</section>
+
+<section class="packages-catalog">
+    <h2>Trending Tour Packages</h2>
+    
+    <div class="package-grid">
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=600&auto=format&fit=cover" alt="Agra Golden Triangle Tour">
+            <div class="package-content">
+                <h3>Agra Heritage Tour</h3>
+                <p>3 Days, 2 Nights — Guided historic walk around Taj Mahal, Agra Fort, and local artisans.</p>
+                <h4>₹14,999</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?q=80&w=600&auto=format&fit=cover" alt="Goa Beach Vacation">
+            <div class="package-content">
+                <h3>Goa Beach Extravaganza</h3>
+                <p>5 Days, 4 Nights — Premium resort stay, water sports combo package, and south Goa cruise.</p>
+                <h4>₹19,500</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1587135941948-670b381f08ce?q=80&w=600&auto=format&fit=cover" alt="Jaipur Royal Forts Tour">
+            <div class="package-content">
+                <h3>Royal Rajasthan Experience</h3>
+                <p>4 Days, 3 Nights — Palace stay, desert safari experience, and cultural folk dinner show.</p>
+                <h4>₹16,800</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1589136775650-8220ef007c08?q=80&w=600&auto=format&fit=cover" alt="Surat Diamond City Tour">
+            <div class="package-content">
+                <h3>Surat City Exploration</h3>
+                <p>3 Days, 2 Nights — Textile hub access, Dumas beach sunset walk, and legendary local food tasting tour.</p>
+                <h4>₹11,200</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=600&auto=format&fit=cover" alt="Sydney Harbor Package">
+            <div class="package-content">
+                <h3>Sydney City & Beyond</h3>
+                <p>6 Days, 5 Nights — Opera House backstage access, Blue Mountains day trek, and luxury cruise line.</p>
+                <h4>₹1,25,000</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=600&auto=format&fit=cover" alt="Paris Romance Package">
+            <div class="package-content">
+                <h3>Romantic Paris Getaway</h3>
+                <p>5 Days, 4 Nights — Eiffel Tower priority skip-the-line pass, Seine river dinner cruise, and Louvre tour.</p>
+                <h4>₹1,45,000</h4>
+                <button type="button" class="book-btn">Book Package</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div id="imgModal" class="img-modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Enlarged View">
+</div>
+
+<footer class="footer">
+    <div class="footer-links">
+        <div>
+            <h3>TravelGo</h3>
+            <p>Your premium, trusted travel partner for unforgettable journeys.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="flights.html">Flights</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Info</h3>
+            <p>support@travelgo.com</p>
+            <p>+91 98765 43210</p>
+        </div>
+    </div>
+    <p class="copyright"></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

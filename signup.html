@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelGo - Create Your Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+<header class="navbar">
+    <div class="logo">
+        <h2>TravelGo</h2>
+    </div>
+    <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="hotels.html">Hotels</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a href="login.html" class="login-btn">Login</a>
+</header>
+
+<main class="auth-container" style="max-width: 500px; margin: 60px auto; padding: 0 20px;">
+    
+    <div class="auth-card" style="background: var(--card-bg, #1e293b); padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+        
+        <div class="auth-header" style="text-align: center; margin-bottom: 30px;">
+            <h2 style="font-size: 28px; margin-bottom: 8px;">Begin Your Journey</h2>
+            <p style="color: var(--muted, #94a3b8); font-size: 14px;">Create an account to bundle trip bookings, save your favorite luxury stays, and download master passes.</p>
+        </div>
+
+        <form class="signup-form" action="#" method="POST">
+            
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #f1f5f9;">Full Name</label>
+                <input type="text" placeholder="Rahul Sharma" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #f1f5f9;">Email Address</label>
+                <input type="email" placeholder="name@example.com" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #f1f5f9;">Password</label>
+                <input type="password" placeholder="Min. 8 characters" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; box-sizing: border-box;">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 25px;">
+                <label style="display: block; margin-bottom: 8px; font-size: 14px; color: #f1f5f9;">Confirm Password</label>
+                <input type="password" placeholder="Re-enter your password" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; box-sizing: border-box;">
+            </div>
+
+            <div class="form-policy" style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 25px;">
+                <input type="checkbox" id="agreeTerms" required style="width: 16px; height: 16px; margin-top: 2px; accent-color: #3b82f6;">
+                <label for="agreeTerms" style="font-size: 13px; color: var(--muted, #94a3b8); cursor: pointer; line-height: 1.4;">
+                    I agree to TravelGo's <a href="#" style="color: #3b82f6; text-decoration: none;">Terms of Service</a> and <a href="#" style="color: #3b82f6; text-decoration: none;">Privacy Policy</a>.
+                </label>
+            </div>
+
+            <button type="submit" class="auth-btn" style="width: 100%; background: #3b82f6; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
+                Create Account
+            </button>
+
+        </form>
+
+        <div class="auth-footer" style="text-align: center; margin-top: 25px; font-size: 14px; color: var(--muted, #94a3b8);">
+            Already have an account? <a href="login.html" style="color: #3b82f6; text-decoration: none; font-weight: 500;">Sign in here</a>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <div>
+            <h3>TravelGo</h3>
+            <p>Your premium, trusted travel partner for unforgettable journeys.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="hotels.html">Hotels</a></li>
+                <li><a href="flights.html">Flights</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact Info</h3>
+            <p>support@travelgo.com</p>
+            <p>+91 98765 43210</p>
+        </div>
+    </div>
+    <p class="copyright"></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
