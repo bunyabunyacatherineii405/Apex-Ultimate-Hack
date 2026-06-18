@@ -26,45 +26,58 @@
     <a href="login.html" class="login-btn">Login</a>
 </header>
 
-<main class="booking-container" style="max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px;">
+<main class="booking-container page-shell">
     
-    <section class="booking-summary" style="flex: 1.2; min-width: 320px; background: var(--card-bg, #1e293b); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); height: fit-content;">
-        </section>
+    <section class="booking-summary">
+        <div class="section-pill">Booking overview</div>
+        <h2>Trip Snapshot</h2>
+        <p>Review your booking details, pricing breakdown, and optional add-ons before you confirm the reservation.</p>
 
-    <section class="payment-form" style="flex: 1; min-width: 320px; background: var(--card-bg, #1e293b); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+        <div class="summary-note">
+            Choose a package, hotel, or flight on the site and this panel becomes your live pre-checkout overview.
+        </div>
+
+        <hr>
+
+        <ul class="feature-list">
+            <li><strong>Fast checkout</strong> Minimal steps with instant payment validation.</li>
+            <li><strong>Flexible add-ons</strong> Add insurance and shuttle support when needed.</li>
+            <li><strong>Trusted flow</strong> Cleanly styled confirmation and receipt generation.</li>
+        </ul>
+    </section>
+
+    <section class="payment-form">
         <h2>Secure Payment Gateway</h2>
-        <p style="color: var(--muted, #94a3b8); margin-bottom: 20px; font-size: 14px;">Confirm your primary passenger credentials below to finalize the transaction and authorize multi-ticket voucher generation.</p>
+        <p>Confirm your primary passenger credentials below to finalize the transaction and authorize multi-ticket voucher generation.</p>
         
         <form action="#" method="POST">
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Primary Passenger Full Name</label>
-                <input type="text" id="cardName" placeholder="e.g. Rahul Sharma" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff;">
+            <div class="form-group">
+                <label>Primary Passenger Full Name</label>
+                <input type="text" id="cardName" placeholder="e.g. Rahul Sharma" required>
             </div>
 
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Notification Contact Email</label>
-                <input type="email" placeholder="e.g. traveler@travelgo.com" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff;">
+            <div class="form-group">
+                <label>Notification Contact Email</label>
+                <input type="email" placeholder="e.g. traveler@travelgo.com" required>
             </div>
 
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 8px; font-size: 14px;">Credit / Debit Card Number</label>
-                <input type="text" maxlength="19" placeholder="4532 •••• •••• 8824" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; font-family: monospace; letter-spacing: 2px;">
+            <div class="form-group">
+                <label>Credit / Debit Card Number</label>
+                <input type="text" maxlength="19" placeholder="4532 •••• •••• 8824" required>
             </div>
 
-            <div class="form-group-row" style="display: flex; gap: 15px; margin-bottom: 25px;">
-                <div class="form-group" style="flex: 1;">
-                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Expiry Date</label>
-                    <input type="text" maxlength="5" placeholder="MM/YY" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; text-align: center;">
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" maxlength="5" placeholder="MM/YY" required>
                 </div>
-                <div class="form-group" style="flex: 1;">
-                    <label style="display: block; margin-bottom: 8px; font-size: 14px;">Security CVV</label>
-                    <input type="password" maxlength="3" placeholder="•••" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; color: #fff; text-align: center;">
+                <div class="form-group">
+                    <label>Security CVV</label>
+                    <input type="password" maxlength="3" placeholder="•••" required>
                 </div>
             </div>
 
-            <button type="submit" class="pay-btn" style="width: 100%; background: #3b82f6; color: white; padding: 14px; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s ease;">
-                Authorize Payment & Clear Itinerary
-            </button>
+            <button type="submit" class="pay-btn">Authorize Payment & Clear Itinerary</button>
         </form>
     </section>
 

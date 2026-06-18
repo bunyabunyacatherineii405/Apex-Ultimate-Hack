@@ -50,7 +50,7 @@ function initSearchFilters() {
    2. INSTANT REAL-WORLD BOOKING MODAL ENGINE
    ========================================================================== */
 function initBookingTriggers() {
-    const buyButtons = document.querySelectorAll('.book-btn, .hotel-btn, .flight-btn, .package-card button, .hero-btn');
+    const buyButtons = document.querySelectorAll('.book-btn, .hotel-btn, .flight-btn, .package-card button');
 
     buyButtons.forEach(button => {
         button.addEventListener('click', (e) => {
@@ -60,7 +60,7 @@ function initBookingTriggers() {
             if (!parentCard) return;
 
             const title = parentCard.querySelector('h3, h1, h4') ? parentCard.querySelector('h3, h1, h4').innerText : 'Premium Travel Experience';
-            const priceText = parentCard.querySelector('h4, .price') ? parentCard.querySelector('h4, .price').innerText : '$1,249'; 
+            const priceText = parentCard.querySelector('h4, .price') ? parentCard.querySelector('h4, .price').innerText : '$99'; 
             const imgElement = parentCard.querySelector('img');
             const imgSrc = imgElement ? imgElement.getAttribute('src') : 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=600&auto=format&fit=cover';
 
@@ -93,7 +93,7 @@ function openRealWorldBookingModal(item) {
                 <div>
                     <span style="font-size:11px; text-transform:uppercase; color:#60a5fa; font-weight:700; letter-spacing:1px;">You Are Booking:</span>
                     <h3 style="margin:4px 0 0 0; color:#fff; font-size:20px; font-weight:700;">${item.title}</h3>
-                    <p style="margin:2px 0 0 0; font-size:14px; color:#94a3b8;">Base Price: $${item.price.toLocaleString()} per ticket</p>
+                    <p style="margin:2px 0 0 0; font-size:14px; color:#94a3b8;">Base Price: ₹${item.price.toLocaleString()} per ticket</p>
                 </div>
             </div>
 
@@ -113,10 +113,10 @@ function openRealWorldBookingModal(item) {
                     <div>
                         <p style="font-size:13px; font-weight:600; color:#fff; margin:0 0 8px 0;">Optional Add-ons:</p>
                         <label style="display:flex; align-items:center; gap:10px; font-size:12px; color:#94a3b8; margin-bottom:8px; cursor:pointer;">
-                            <input type="checkbox" id="modal-ins" style="width:auto; cursor:pointer;"> Full Travel Insurance (+$50 / person)
+                            <input type="checkbox" id="modal-ins" style="width:auto; cursor:pointer;"> Full Travel Insurance (+₹500 / person)
                         </label>
                         <label style="display:flex; align-items:center; gap:10px; font-size:12px; color:#94a3b8; cursor:pointer;">
-                            <input type="checkbox" id="modal-shuttle" style="width:auto; cursor:pointer;"> Airport Shuttle Pickup (+$30 flat)
+                            <input type="checkbox" id="modal-shuttle" style="width:auto; cursor:pointer;"> Airport Shuttle Pickup (+₹300 flat)
                         </label>
                     </div>
                 </div>
@@ -158,15 +158,15 @@ function openRealWorldBookingModal(item) {
         item.addons.shuttle = shuttleCheck.checked;
 
         let subtotal = item.price * item.passengers;
-        if (item.addons.insurance) subtotal += (50 * item.passengers);
-        if (item.addons.shuttle) subtotal += 30;
+        if (item.addons.insurance) subtotal += (500 * item.passengers);
+        if (item.addons.shuttle) subtotal += 300;
 
         const fee = subtotal * 0.05;
         const grandTotal = subtotal + fee;
 
-        document.getElementById('m-subtotal').innerText = `$${subtotal.toLocaleString()}`;
-        document.getElementById('m-fee').innerText = `$${fee.toLocaleString()}`;
-        document.getElementById('m-grandtotal').innerText = `Total: $${grandTotal.toLocaleString()}`;
+        document.getElementById('m-subtotal').innerText = `₹${subtotal.toLocaleString()}`;
+        document.getElementById('m-fee').innerText = `₹${fee.toLocaleString()}`;
+        document.getElementById('m-grandtotal').innerText = `Total: ₹${grandTotal.toLocaleString()}`;
         
         item.computedTotal = grandTotal; 
     };
@@ -195,9 +195,31 @@ function openRealWorldBookingModal(item) {
         item.id = 'TRV-' + Math.floor(100000 + Math.random() * 900000);
 
         // Append item directly into unauthenticated guest storage cache
-        const currentHistory = JSON.parse(localStorage.getItem('travelHistory') || '[]');
-        currentHistory.unshift(item);
-        localStorage.setItem('travelHistory', JSON.stringify(currentHistory));
+        const currentUser = localStorage.getItem('currentUser');
+
+if (currentUser) {
+    const userHistory = JSON.parse(
+        localStorage.getItem(`history_${currentUser}`) || '[]'
+    );
+
+    userHistory.unshift(item);
+
+    localStorage.setItem(
+        `history_${currentUser}`,
+        JSON.stringify(userHistory)
+    );
+} else {
+    const guestHistory = JSON.parse(
+        localStorage.getItem('travelHistory') || '[]'
+    );
+
+    guestHistory.unshift(item);
+
+    localStorage.setItem(
+        'travelHistory',
+        JSON.stringify(guestHistory)
+    );
+}
 
         modalOverlay.remove();
         showSuccessModal(item);
@@ -219,7 +241,7 @@ function showSuccessModal(item) {
             <div style="background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); padding:15px; border-radius:12px; text-align:left; margin-bottom:25px;">
                 <p style="margin:0 0 5px 0; font-size:12px; color:#94a3b8;">Destination: <span style="color:#fff; font-weight:600;">${item.title}</span></p>
                 <p style="margin:0 0 5px 0; font-size:12px; color:#94a3b8;">Total Tickets: <span style="color:#fff; font-weight:600;">${item.passengers} Ticket(s)</span></p>
-                <p style="margin:0; font-size:12px; color:#94a3b8;">Total Charged: <span style="color:#60a5fa; font-weight:700;">$${item.computedTotal.toLocaleString()}</span></p>
+                <p style="margin:0; font-size:12px; color:#94a3b8;">Total Charged: <span style="color:#60a5fa; font-weight:700;">₹${item.computedTotal.toLocaleString()}</span></p>
             </div>
 
             <div style="display:flex; flex-direction:column; gap:12px;">
@@ -235,35 +257,91 @@ function showSuccessModal(item) {
 
     document.body.appendChild(modalOverlay);
 
-    document.getElementById('btn-download-receipt').addEventListener('click', () => {
-        const receiptContent = `
-==================================================
-              TRAVELGO BOOKING RECEIPT            
-==================================================
-Booking Reference ID : ${item.id}
-Transaction Date     : ${item.date}
-Payment Status       : CONFIRMED & AUTHORIZED
---------------------------------------------------
-Itinerary Details    : ${item.title}
-Total Tickets/Pass   : ${item.passengers}
-Insurance Protection : ${item.addons.insurance ? 'Yes' : 'No'}
-Airport Shuttle Bus  : ${item.addons.shuttle ? 'Yes' : 'No'}
---------------------------------------------------
-GRAND TOTAL PAID     : $${item.computedTotal.toLocaleString()}
-==================================================
-Thank you for booking with TravelGo Premium Systems.
-        `.trim();
+    document.getElementById('btn-download-receipt').addEventListener('click', async () => {
 
-        const blob = new Blob([receiptContent], { type: 'text/plain' });
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `Receipt-${item.id}.txt`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
+    const receipt = document.createElement('div');
+
+    receipt.style.cssText = `
+        width:800px;
+        background:linear-gradient(135deg,#0f172a,#1e293b,#111827);
+        color:white;
+        padding:40px;
+        border-radius:20px;
+        font-family:Poppins,sans-serif;
+        position:absolute;
+        position:relative;
+        left:-9999px;
+        top:0;
+    `;
+
+    receipt.innerHTML = `
+    <div style="
+        position:absolute;
+        right:20px;
+        top:20px;
+        font-size:70px;
+        font-weight:900;
+        opacity:.04;
+        color:white;">
+        TravelGo
+        </div>
+        <div style="border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:20px;margin-bottom:20px;">
+            <h1 style="margin:0;color:#60a5fa;">TravelGo</h1>
+            <p style="color:#94a3b8;">Premium Travel Booking Receipt</p>
+        </div>
+
+        <img src="${item.image}"
+             style="width:100%;height:300px;object-fit:cover;border-radius:15px;">
+
+        <h2 style="margin-top:25px;">${item.title}</h2>
+
+        <div style="
+            background:rgba(255,255,255,.05);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,.1);
+            padding:20px;
+            border-radius:16px;">
+            <p><strong>Booking ID:</strong> ${item.id}</p>
+            <p><strong>Date:</strong> ${item.date}</p>
+            <p><strong>Passengers:</strong> ${item.passengers}</p>
+            <p><strong>Insurance:</strong> ${item.addons.insurance ? 'Yes' : 'No'}</p>
+            <p><strong>Airport Shuttle:</strong> ${item.addons.shuttle ? 'Yes' : 'No'}</p>
+        </div>
+
+        <h2 style="margin-top:25px;color:#4ade80;">
+            Total Paid: ₹${item.computedTotal.toLocaleString()}
+        </h2>
+    `;
+
+    document.body.appendChild(receipt);
+
+    const canvas = await html2canvas(receipt, {
+        scale: 2
     });
+
+    const imgData = canvas.toDataURL('image/png');
+
+    const { jsPDF } = window.jspdf;
+
+    const pdf = new jsPDF('p', 'mm', 'a4');
+
+    const pdfWidth = 190;
+    const imgHeight =
+        (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(
+        imgData,
+        'PNG',
+        10,
+        10,
+        pdfWidth,
+        imgHeight
+    );
+
+    pdf.save(`TravelGo-Receipt-${item.id}.pdf`);
+
+    receipt.remove();
+});
 
     document.getElementById('btn-close-success').addEventListener('click', () => {
         modalOverlay.remove();
@@ -391,7 +469,7 @@ function renderProfileHistory() {
                 </div>
             </div>
             <div style="text-align:right;">
-                <span style="display:block; font-weight:700; color:#3b82f6; font-size:16px;">$${item.computedTotal.toLocaleString()}</span>
+                <span style="display:block; font-weight:700; color:#3b82f6; font-size:16px;">₹${item.computedTotal.toLocaleString()}</span>
                 <span style="font-size:11px; padding:3px 8px; border-radius:20px; background:rgba(16,185,129,0.1); color:#10b981; font-weight:600;">Active & Synced</span>
             </div>
         `;
